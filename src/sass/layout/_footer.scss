@@ -1,0 +1,18 @@
+@use "../abstracts/variables" as *;
+
+.footer {
+  background-color: $color-dark-blue;
+  padding: 36px 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo--light {
+    color: $color-white;
+    font-weight: 800;
+    font-size: 28px;
+  }
+}

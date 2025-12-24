@@ -1,0 +1,24 @@
+@use "grid" as *;
+@use "footer" as *;
+@use "forms" as *;
+@use "navbar" as *;
+@use "sidebar" as *;
+@use "header" as *;
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *; // Si usas breakpoints ahí también
+
+.container {
+  width: 100%;
+  padding: 0 16px; // Mobile
+  margin: 0 auto;
+
+  @include breakpoint(tablet) {
+    padding: 0 40px;
+  }
+
+  @include breakpoint(tablethorizontal) {
+    max-width: $container-max-width;
+    padding: 0; // Quitamos padding lateral si ya tenemos max-width
+  }
+}

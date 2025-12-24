@@ -1,0 +1,67 @@
+@use 'buttons' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.card {
+  background-color: $color-white;
+  border-radius: 15px;
+  padding: 56px 28px 32px;
+  box-shadow: 0px 25px 50px rgba(6, 22, 141, 0.04);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 24px; // Espacio para el icono flotante
+
+  // Modificador: Featured Card (Naranja)
+  &--featured {
+    background: $grad-primary;
+    margin-top: 0; // No tiene icono flotante
+    padding-top: 56px;
+
+    .card__title--big {
+      color: $color-white;
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.3;
+      
+      @include breakpoint(tablethorizontal) {
+        font-size: 32px;
+      }
+    }
+  }
+
+  // Iconos
+  &__icon {
+    position: absolute;
+    top: -28px;
+    left: 28px;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: $grad-primary; 
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  &__title {
+    color: $color-dark-blue;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    
+    @include breakpoint(tablethorizontal) { font-size: 24px; }
+  }
+
+  &__description {
+    font-size: 16px;
+    color: $color-grey;
+    margin-bottom: 24px;
+    flex-grow: 1; 
+  }
+
+  &__link {
+    font-size: 18px;
+    font-weight: 700;
+    color: $color-pink;
+    &:hover { color: $color-pink-hover; }
+  }
+}

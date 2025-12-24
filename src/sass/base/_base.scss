@@ -1,0 +1,41 @@
+@use 'animations'as *;
+@use 'reset'as *;
+@use 'typography'as *;
+@use '../abstracts/variables' as *; 
+@use '../abstracts/mixins' as *;
+
+body {
+  font-family: $font-main;
+  font-size: 16px;
+  line-height: 1.75;
+  color: $color-grey;
+  background-color: $color-bg;
+  overflow-x: hidden;
+  position: relative;
+
+  /* Decoración Desktop (Blob esquina superior derecha) */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; z-index: -1;
+    width: 50vw; 
+    height: 600px;
+
+    opacity: 0.1; // Ajuste visual si usas gradiente en vez de SVG
+    display: none;
+
+    @include breakpoint(tablethorizontal) { 
+      display: block; 
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
